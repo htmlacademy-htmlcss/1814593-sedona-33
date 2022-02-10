@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Седона</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -14,9 +15,15 @@
       </a>
       <nav class="page-header__navigation navigation">
         <ul class="navigation__list">
-          <li class="navigation__item">Главна</li>
-          <li class="navigation__item">О Седоне</li>
-          <li class="navigation__item">Гостиницы</li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Главная</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">О Седоне</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Гостиницы</a>
+          </li>
         </ul>
       </nav>
       <div class="page-header__user-nav user-nav">
@@ -35,191 +42,203 @@
     </div>
   </header>
   <main class="page-main">
-    <div class="page-main__container container">
-      <section class="page-main__filter filter">
-        <div class="filter__breadcrumbs breadcrumbs">
-          <ul class="breadcrumbs__list">
-            <li class="breadcrumbs__item">
-              <a class="breadcrumbs__link" href="">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 0.300049L0 5.80005V12H12V5.80005L6 0.300049ZM11 11H1V6.20005L6 1.70005L11 6.20005V11Z" fill="white" />
-                  <path d="M4 10H5V7.5H7V10H8V6.5H4V10Z" fill="white" />
-                </svg>
+		<section class="page-main__filter filter">
+			<div class="filter__container container">
+				<div class="filter__breadcrumbs breadcrumbs">
+					<h2 class="breadcrumbs__title">Гостиницы Седоны</h2>
+					<ul class="breadcrumbs__list">
+						<li class="breadcrumbs__item">
+							<div class="breadcrumbs__home">
+								<a class="breadcrumbs__link" href="#">
+									<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M6 0.300049L0 5.80005V12H12V5.80005L6 0.300049ZM11 11H1V6.20005L6 1.70005L11 6.20005V11Z" fill="white" />
+										<path d="M4 10H5V7.5H7V10H8V6.5H4V10Z" fill="white" />
+									</svg>
+								</a>
+							</div>
+						</li>
+						<li class="breadcrumbs__item">
+							<div class="breadcrumbs__hotel">
+								<a class="breadcrumbs__link" href="#">Гостиницы</a>
+							</div>
+						</li>
+					</ul>
+          <div class="filter__line">
+            <form class="filter__group">
+              <div class="filter__checkmark">
+                <p class="filter__title">Инфраструктура:</p>
+                <input class="filter__input" type="checkbox" id="checkmark1" name="pool" value="pool" checked>
+                <label class="filter__label" for="checkmark1">Бассейн</label>
+                <input class="filter__input" type="checkbox" id="checkmark2" name="parking" value="parking" checked>
+                <label class="filter__label" for="checkmark2">Парковка</label>
+                <input class="filter__input" type="checkbox" id="checkmark3" name="wifi" value="wifi">
+                <label class="filter__label" for="checkmark3">Wi-Fi</label>
+              </div>
+            </form>
+            <form class="filter__group">
+              <div class="filter__click">
+                <p class="filter__title">Тип жилья:</p>
+                <input class="filter__input--radio" type="radio" id="click1" name="hotel" value="hotel" checked>
+                <label class="filter__label" for="click1">Гостиница</label>
+                <input class="filter__input--radio" type="radio" id="click2" name="motel" value="motel">
+                <label class="filter__label" for="click2">Мотель</label>
+                <input class="filter__input--radio" type="radio" id="click3" name="apartment" value="apartment">
+                <label class="filter__label" for="click3">Апартаменты</label>
+              </div>
+            </form>
+            <div class="filter__cost">
+              <p class="filter__title">Стоимость, ₽:</p>
+              <div class="filter__figure">
+                <form class="filter-form" action="#" method="post">
+                  <input class="filter__input" type="from" name="from" id="from" placeholder="от">
+                </form>
+                <form class="filter-form" action="#" method="post">
+                  <input class="filter__input" type="before" name="before" id="before" placeholder="до">
+                </form>
+              </div>
+              <div class="filter__range-bar range-bar" style="left: 0px; width: 108px">
+                <button class="range-bar toggle-min" type="button">
+                  <span class="range-bar__span visually-hidden">Изменить минимальную стоимость</span>
+                </button>
+                <button class="range-bar toggle-max" type="button">
+                  <span class="range-bar__span visually-hidden">Изменить максимальную стоимость</span>
+                </button>
+              </div>
+            </div>
+            <div class="filter__button">
+              <button class="filter__apply apply">Применить</button>
+              <button class="filter__reset">Сбросить</button>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class="page-main__catalog-cards catalog-cards">
+      <div class="catalog-cards__container container">
+        <div class="catalog-cards__variants variants">
+          <p class="variants__title">Найдено гостиниц: 38</p>
+          <form class="variants__sorting">
+            <label class="variants__label">
+              <select class="variants__select" name="sorting" id="sorting">
+                <option value="popular">Сначала дешёвые</option>
+                <option value=""></option>
+              </select>
+            </label>
+          </form>
+        </div>
+        <ul class="catalog-cards__list">
+          <li class="catalog-cards__item">
+            <div class="catalog-cards__content">
+              <a class="catalog-cards__link" href="#">
+                <img class="catalog-cards__image" src="image/hotel-1.png" alt="Amara Resort & Spa">
               </a>
-            </li>
-            <li class="breadcrumbs__item">
-              <a class="breadcrumbs__link" href="">Гостиницы</a>
-            </li>
-          </ul>
-        </div>
-        <form class="filter__group">
-          <p class="filter__infrastructure">Инфраструктура:</p>
-          <div class="filter__checkmark">
-            <input class="filter__input" type="checkbox" id="checkmark1" name="pool" value="pool" checked>
-            <label class="filter__label" for="checkmark1">Бассейн</label>
-            <input class="filter__input" type="checkbox" id="checkmark2" name="parking" value="parking" checked>
-            <label class="filter__label" for="checkmark2">Парковка</label>
-            <input class="filter__input" type="checkbox" id="checkmark3" name="wifi" value="wifi">
-            <label class="filter__label" for="checkmark3">Wi-Fi</label>
+            </div>
+            <div class="catalog-cards__sing">
+              <h2 class="catalog-cards__title-cards">Amara Resort & Spa</h2>
+              <p class="catalog-cards__hotel">Гостиница</p>
+              <p class="catalog-cards__price">От 4000 ₽</p>
+              <input class="catalog-cards__input--detail" type="button" value="подробнее">
+              <input class="catalog-cards__input--favorite" type="button" value="В избранное">
+              <!--Прописать звездочки-->
+              <p class="catalog-cards__rating">Рейтинг: 8,5</p>
+            </div>
+          </li>
+          <li class="catalog-cards__item">
+            <div class="catalog-cards__content">
+              <a class="catalog-cards__link" href="#">
+                <img class="catalog-cards__image" src="image/hotel-2.png" alt="Desert Quail Inn">
+              </a>
+            </div>
+            <div class="catalog-cards__sing">
+              <h2 class="catalog-cards__title-cards">Desert Quail Inn</h2>
+              <p class="catalog-cards__hotel">Гостиница</p>
+              <p class="catalog-cards__price">От 3000 ₽</p>
+              <input class="catalog-cards__input--detail" type="button" value="подробнее">
+              <input class="catalog-cards__input--favorite" type="button" value="В избранное">
+              <!--Прописать звездочки-->
+              <p class="catalog-cards__rating">Рейтинг: 8,9</p>
+            </div>
+          </li>
+          <li class="catalog-cards__item">
+            <div class="catalog-cards__content">
+              <a class="catalog-cards__link" href="#">
+                <img class="catalog-cards__image--favorite" src="image/hotel-3.png" alt="Villas at Poco Diablo">
+              </a>
+            </div>
+            <div class="catalog-cards__sing">
+              <h2 class="catalog-cards__title-cards">Villas at Poco Diablo</h2>
+              <p class="catalog-cards__hotel">Гостиница</p>
+              <p class="catalog-cards__price">От 2000 ₽</p>
+              <input class="catalog-cards__input--detail" type="button" value="подробнее">
+              <input class="catalog-cards__input--green" type="button" value="В избранном">
+              <!--Прописать звездочки-->
+              <p class="catalog-cards__rating">Рейтинг: 9,2</p>
+            </div>
+          </li>
+          <li class="catalog-cards__item">
+            <div class="catalog-cards__content">
+              <a class="catalog-cards__link" href="#">
+                <img class="catalog-cards__image" src="image/hotel-4.png" alt="GreenTree Inn">
+              </a>
+            </div>
+            <div class="catalog-cards__sing">
+              <h2 class="catalog-cards__title-cards">GreenTree Inn</h2>
+              <p class="catalog-cards__hotel">Гостиница</p>
+              <p class="catalog-cards__price">От 3 000 ₽</p>
+              <input class="catalog-cards__input--detail" type="button" value="подробнее">
+              <input class="catalog-cards__input--favorite" type="button" value="В избранное">
+              <!--Прописать звездочки-->
+              <p class="catalog-cards__rating">Рейтинг: 9,2</p>
+            </div>
+          </li>
+        </ul>
+        <div class="page-main__numeration numeration">
+          <input class="numeration__input" type="button" value="Загрузить ещё">
+          <div class="numeration__placement">
+            <ul class="numeration__list">
+              <li class="numeration__item">
+                <a class="numeration__link numeration__link--active" href="#">1</a>
+              </li>
+              <li class="numeration__item">
+                <a class="numeration__link" href="#">2</a>
+              </li>
+              <li class="numeration__item">
+                <a class="numeration__link" href="#">3</a>
+              </li>
+              <li class="numeration__item">
+                <a class="numeration__link" href="#">4</a>
+              </li>
+              <li class="numeration__item">
+                <a class="numeration__link" href="#">...</a>
+              </li>
+              <li class="numeration__item">
+                <a class="numeration__link" href="#">10</a>
+              </li>
+            </ul>
+            <form class="numeration__sort">
+              <label for="numeration__label">Гостиниц на странице:</label>
+              <select class="numeration__select" name="sorting" id="sorting">
+                <option value="numeration__popular">4</option>
+                <option value="numeration__popular"></option>
           </div>
-        </form>
-        <form class="filter__group">
-          <p class="filter__accommodation">Тип жилья:</p>
-          <div class="filter__click">
-            <input class="filter__input" type="radio" id="click1" name="hotel" value="hotel" checked>
-            <label class="filter__label" for="click1">Гостиница</label>
-            <input class="filter__input" type="radio" id="click2" name="motel" value="motel">
-            <label class="filter__label" for="click2">Мотель</label>
-            <input class="filter__input" type="radio" id="click3" name="apartment" value="apartment">
-            <label class="filter__label" for="click3">Апартаменты</label>
-          </div>
-        </form>
-        <div class="filter__cost">
-					<form class="filter-form" action="#" method="post">
-						<input class="filter-input" type="from" name="from" id="from" placeholder="от">
-					</form>
-					<form class="filter-form" action="#" method="post">
-						<input class="filter-input" type="before" name="before" id="before" placeholder="до">
-					</form>
-					<div class="filter__range-bar range-bar" style="left: 0px; width: 108px">
-						<button class="range-bar toggle-min" type="button">
-							<span class="range-bar__span visually-hidden">Изменить минимальную стоимость</span>
-						</button>
-						<button class="range-bar toggle-max" type="button">
-							<span class="range-bar__span visually-hidden">Изменить максимальную стоимость</span>
-						</button>
-					</div>
+            </select>
+          </form>
         </div>
-				<div class="filter__button">
-					<button class="filter__apply apply">Применить</button>
-					<button class="filter__reset">Сбросить</button>
-				</div>
-      </section>
-    </div>
-    <div class="page-main__variants variants">
-      <div class="variants container container">
-        <p class="variants__title">Найдено гостиниц: 38</p>
-        <form class="variants__sorting">
-          <label for="variants__label visually-hidden">Сортировка:</label>
-          <select class="variants__select" name="sorting" id="sorting">
-            <option value="popular">Сначала дешёвые</option>
-            <option value=""></option>
-          </select>
-        </form>
       </div>
-    </div>
-    <div class="page-main__catalog-cards catalog-cards">
-      <ul class="catalog-cards__list">
-        <li class="catalog-cards__item">
-          <div class="catalog-cards__content">
-            <a class="catalog-cards__link" href="#">
-              <img class="catalog-cards__image" src="image/hotel-1.png" alt="Amara Resort & Spa">
-            </a>
-          </div>
-          <div class="catalog-cards__sing">
-            <h2 class="catalog-cards__title-cards">Amara Resort & Spa</h2>
-            <p class="catalog-cards__hotel">Гостиница</p>
-            <p class="catalog-cards__price">От 4000 ₽</p>
-            <input class="catalog-cards__input" type="button" value="подробнее">
-            <input class="catalog-cards__input" type="button" value="В избранное">
-            <!--Прописать звездочки-->
-            <p class="catalog-cards__rating">Рейтинг: 8,5</p>
-          </div>
-        </li>
-        <li class="catalog-cards__item">
-          <div class="catalog-cards__content">
-            <a class="catalog-cards__link" href="#">
-              <img class="catalog-cards__image" src="image/hotel-2.png" alt="Desert Quail Inn">
-            </a>
-          </div>
-          <div class="catalog-cards__sing">
-            <h2 class="catalog-cards__title-cards">Desert Quail Inn</h2>
-            <p class="catalog-cards__hotel">Гостиница</p>
-            <p class="catalog-cards__price">От 3000 ₽</p>
-            <input class="catalog-cards__input" type="button" value="подробнее">
-            <input class="catalog-cards__input" type="button" value="В избранное">
-            <!--Прописать звездочки-->
-            <p class="catalog-cards__rating">Рейтинг: 8,9</p>
-          </div>
-        </li>
-        <li class="catalog-cards__item">
-          <div class="catalog-cards__content">
-            <a class="catalog-cards__link" href="#">
-              <img class="catalog-cards__image" src="image/hotel-3.png" alt="Villas at Poco Diablo">
-            </a>
-          </div>
-          <div class="catalog-cards__sing">
-            <h2 class="catalog-cards__title-cards">Villas at Poco Diablo</h2>
-            <p class="catalog-cards__hotel">Гостиница</p>
-            <p class="catalog-cards__price">От 2000 ₽</p>
-            <input class="catalog-cards__input" type="button" value="подробнее">
-            <input class="catalog-cards__input" type="button" value="В избранном">
-            <!--Прописать звездочки-->
-            <p class="catalog-cards__rating">Рейтинг: 9,2</p>
-          </div>
-        </li>
-        <li class="catalog-cards__item">
-          <div class="catalog-cards__content">
-            <a class="catalog-cards__link" href="#">
-              <img class="catalog-cards__image" src="image/hotel-4.png" alt="GreenTree Inn">
-            </a>
-          </div>
-          <div class="catalog-cards__sing">
-            <h2 class="catalog-cards__title-cards">GreenTree Inn</h2>
-            <p class="catalog-cards__hotel">Гостиница</p>
-            <p class="catalog-cards__price">От 3 000 ₽</p>
-            <input class="catalog-cards__input" type="button" value="подробнее">
-            <input class="catalog-cards__input" type="button" value="В избранное">
-            <!--Прописать звездочки-->
-            <p class="catalog-cards__rating">Рейтинг: 9,2</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="page-main__enumerate enumerate">
-      <input class="enumerate__input" type="button" value="Загрузить ещё">
-      <ul class="enumerate__list">
-        <li class="enumerate__item">
-          <a class="enumerate__link" href="#">1</a>
-        </li>
-        <li class="enumerate__item">
-          <a class="enumerate__link" href="#">2</a>
-        </li>
-        <li class="enumerate__item">
-          <a class="enumerate__link" href="#">3</a>
-        </li>
-        <li class="enumerate__item">
-          <a class="enumerate__link" href="#">4</a>
-        </li>
-        <li class="enumerate__item">
-          <a class="enumerate__link" href="#">...</a>
-        </li>
-        <li class="enumerate__item">
-          <a class="enumerate__link" href="#">10</a>
-        </li>
-      </ul>
-      <form class="enumerate__sort">
-        <label for="enumerate__label">Гостиниц на странице:</label>
-        <select class="enumerate__select" name="sorting" id="sorting">
-          <option value="popular">4</option>
-          <option value=""></option>
-        </select>
-      </form>
-    </div>
-    <div class="page-main__container container">
-      <section class="page-main__subscribe subscribe">
+    </section>
+    <section class="page-main__subscribe subscribe">
+      <div class="page-main__container container">
         <p class="subscribe__title">Подпишитесь на рассылку</p>
         <p class="subscribe__text">Только полезная информация и никакого спама, честное бойскаутское!</p>
         <form class="subscribe__form" action="#" method="post">
           <input class="subscribe__input" type="text" name="sign" id="sign" placeholder="Ваш e-mail">
           <button class="subscribe__button" type="submit">Подписаться</button>
         </form>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
   <footer class="page-footer">
     <div class="page-footer__container container">
-      <div class="page-footer__social">
+      <div class="page-footer__social social">
         <ul class="social__list">
           <li class="social__item">
             <a class="social__link social__link--twitter" href="https://twitter.com/htmlacademy_ru">
@@ -254,8 +273,10 @@
             </a>
           </li>
         </ul>
-        <p class="page-footer__telefon">+7 (812) 812-12-12</p>
-        <a href="" class="page-footer__htmlacademy">
+      </div>
+      <p class="page-footer__phone">+7 (812) 812-12-12</p>
+      <div class="page-footer__htmlacademy">
+        <a href="" class="page-footer__link">
           <svg width="115" height="33" viewBox="0 0 115 33" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 12.8999V15.4999H2.5V12.8999H0Z" fill="black" />
             <path
@@ -292,8 +313,8 @@
               d="M109.4 27.0001L105.8 18.1001H103.6L108.4 29.7001C108.1 30.6001 107.7 30.9001 106.7 30.9001H104.2V32.9001H106.7C108.5 32.9001 109.5 32.1001 110.2 30.3001L114.9 18.1001H112.8L109.4 27.0001Z"
               fill="black" />
           </svg>
-        </a>
       </div>
+      </a>
     </div>
   </footer>
 </body>
