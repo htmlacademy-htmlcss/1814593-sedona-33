@@ -1164,6 +1164,11 @@ body {
   opacity: 0.6;
 }
 
+.catalog-cards__image:focus {
+  border: none;
+  outline: none;
+}
+
 .catalog-cards__image:active {
   opacity: 0.3;
 }
