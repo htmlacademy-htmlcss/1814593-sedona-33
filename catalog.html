@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>HTML Academy: Седона</title>
+	<link rel="icon" type="image/ico" href="/image/favicon.ico">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -17,13 +18,13 @@
 				<nav class="page-header__navigation navigation">
 					<ul class="navigation__list">
 						<li class="navigation__item">
-							<a class="navigation__link" href="#">Главная</a>
+							<a class="navigation__link" href="index.html">Главная</a>
 						</li>
 						<li class="navigation__item">
 							<a class="navigation__link" href="#">О Седоне</a>
 						</li>
 						<li class="navigation__item">
-							<a class="navigation__link navigation__link--active" href="#">Гостиницы</a>
+							<a class="navigation__link navigation__link--active" href="catalog.html">Гостиницы</a>
 						</li>
 					</ul>
 				</nav>
@@ -52,7 +53,7 @@
 							</a>
 						</li>
 						<li class="user-nav__item">
-							<button class="user-nav__button">Хочу сюда!</button>
+							<button class="user-nav__button" type="button">Хочу сюда!</button>
 						</li>
 					</ul>
 				</div>
@@ -60,7 +61,7 @@
 		</header>
 		<main class="page-main">
 			<section class="page-main__filter filter">
-				<h2 class="filter__title">Гостиницы Седоны</h2>
+				<h1 class="filter__title">Гостиницы Седоны</h1>
 				<ul class="filter__list breadcrumbs">
 					<li class="breadcrumbs__item">
 						<div class="breadcrumbs__home">
@@ -74,24 +75,15 @@
 						</div>
 					</li>
 					<li class="breadcrumbs__item">
-						<a class="breadcrumbs__link" href="#">
-							<svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M4.79998 3.6L0.999984 0.200003C0.799984 3.05474e-06 0.399984 3.05474e-06 0.0999836 0.200003C-0.200016 0.400003 -0.100016 0.800003 0.0999836 1L3.39998 4L0.199984 7C-1.63764e-05 7.2 -1.63764e-05 7.6 0.199984 7.8C0.199984 7.9 0.499984 8 0.599984 8C0.699984 8 0.899984 7.9 0.999984 7.8L4.79998 4.4C5.09998 4.2 5.09998 3.8 4.79998 3.6Z"
-									fill="currentColor" />
-							</svg>
-						</a>
-					</li>
-					<li class="breadcrumbs__item">
 						<div class="breadcrumbs__hotel">
 							<a class="breadcrumbs__link" href="#">Гостиницы</a>
 						</div>
 					</li>
 				</ul>
 				<div class="filter__groups group-filter">
-					<form class="group-filter__form">
+					<form class="group-filter__form" action="https://echo.htmlacademy.ru" method="post">
 						<div class="group-filter__infrastructure infrastructure">
-							<h3 class="infrastructure__title filter__subtitle">Инфраструктура:</h3>
+							<h2 class="infrastructure__title filter__subtitle">Инфраструктура:</h2>
 							<ul class="infrastructure__list">
 								<li class="infrastructure__item">
 									<label class="infrastructure__label" for="checkmark1">
@@ -120,7 +112,7 @@
 							</ul>
 						</div>
 						<div class="group-filter__typehouse typehouse">
-							<h3 class="filter__subtitle typehouse__title">Тип жилья:</h3>
+							<h2 class="filter__subtitle typehouse__title">Тип жилья:</h2>
 							<ul class="typehouse__list">
 								<li class="typehouse__item">
 									<label class="typehouse__label" for="click1">
@@ -149,14 +141,18 @@
 							</ul>
 						</div>
 						<div class="group-filter__cost cost">
-							<h3 class="filter__subtitle cost__title">Стоимость, ₽:</h3>
+							<h2 class="filter__subtitle cost__title">Стоимость, ₽:</h2>
 							<div class="cost__frame">
 								<div class="cost__figure cost__figure--left">
-									<input class="cost__input cost__input--left" type="text" name="from" id="from" placeholder="0">
+									<label for="from">
+										<input class="cost__input cost__input--left" type="text" name="from" id="from" placeholder="0">
+									</label>
 								</div>
 								<div class="cost__figure cost__figure--right">
-									<input class="cost__input cost__input--right" type="text" name="before" id="before"
-										placeholder="9000">
+									<label for="before">
+										<input class="cost__input cost__input--right" type="text" name="before" id="before"
+											placeholder="9000">
+									</label>
 								</div>
 							</div>
 							<div class="cost__range range">
@@ -171,8 +167,8 @@
 							</div>
 						</div>
 						<div class="group-filter__buttons buttons">
-							<button class="buttons__apply">Применить</button>
-							<button class="buttons__reset">Сбросить</button>
+							<button class="buttons__apply" type="button">Применить</button>
+							<button class="buttons__reset" type="button">Сбросить</button>
 						</div>
 					</form>
 				</div>
@@ -180,11 +176,10 @@
 			<section class="page-main__catalog-cards catalog-cards">
 				<div class="catalog-cards__variants variants">
 					<h2 class="variants__title">Найдено гостиниц: 38</h2>
-					<form class="variants__sorting">
+					<form class="variants__sorting" action="https://echo.htmlacademy.ru" method="post">
 						<label class="variants__label">
 							<select class="variants__select" name="sorting" id="sorting">
 								<option value="popular">Сначала дешёвые</option>
-								<option value=""></option>
 							</select>
 						</label>
 					</form>
@@ -318,7 +313,9 @@
 					</li>
 				</ul>
 				<div class="page-main__numeration numeration">
-					<input class="numeration__input" type="button" value="Загрузить ещё">
+					<div class="numeration__download">
+						<input class="numeration__input" type="button" value="Загрузить ещё">
+					</div>
 					<div class="numeration__placement">
 						<ul class="numeration__list">
 							<li class="numeration__item">
@@ -340,12 +337,11 @@
 								<a class="numeration__link" href="#">10</a>
 							</li>
 						</ul>
-						<form class="numeration__sort">
+						<form class="numeration__sort" action="https://echo.htmlacademy.ru" method="post">
 							<label class="numeration__label">
 								<span class="numeration__text">Гостиниц на странице:</span>
-								<select class="numeration__select" name="sorting" id="sorting">
+								<select class="numeration__select" name="sorting" id="numsorting">
 									<option value="numeration__popular">4</option>
-									<option value="numeration__popular"></option>
 								</select>
 							</label>
 						</form>
@@ -355,8 +351,10 @@
 			<section class="page-main__subscribe sign">
 				<h2 class="sign__title">Подпишитесь на рассылку</h2>
 				<p class="sign__text">Только полезная информация и никакого спама, честное бойскаутское!</p>
-				<form class="sign__form" action="#" method="post">
-					<input class="sign__input" type="text" name="sign" id="sign" placeholder="Ваш e-mail">
+				<form class="sign__form" action="https://echo.htmlacademy.ru" method="post">
+					<label for="sign">
+						<input class="sign__input" type="text" name="sign" id="sign" placeholder="Ваш e-mail">
+					</label>
 					<button class="sign__button" type="submit">Подписаться</button>
 				</form>
 			</section>
@@ -397,7 +395,7 @@
 						</a>
 					</li>
 				</ul>
-				<a class="page-footer__phone" href="tel:+7 (812) 812-12-12">+7 (812) 812-12-12</a>
+				<a class="page-footer__phone" href="tel:78128121212">+7 (812) 812-12-12</a>
 				<a href="#" class="page-footer__link">
 					<svg width="115" height="33" viewBox="0 0 115 33" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M0 12.8999V15.4999H2.5V12.8999H0Z" fill="currentColor" />
